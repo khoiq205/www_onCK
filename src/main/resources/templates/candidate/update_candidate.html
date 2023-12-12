@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/candidate/update}" th:object="${candidate}" th:method="post" >
+    <input th:field="*{id}" type="hidden">
+    <label for="name">Name: </label>
+    <input th:field="*{fullName}" type="text" name="name" id="name" required>
+    <label for="phone">Phone: </label>
+    <input th:field="*{phone}" type="text" name="phone" id="phone" required>
+    <label for="email">Email: </label>
+    <input th:field="*{email}" type="text" name="email" id="email" required>
+    <button type="submit">Sửa</button>
+</form>
+</body>
+</html>

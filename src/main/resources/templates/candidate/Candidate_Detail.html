@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>candidate detail</h1>
+<div th:object="${candidate}">
+    <h5>Id: [[${candidate.id}]]</h5>
+    <h5>Name: [[${candidate.fullName}]]</h5>
+    <h5>Phone: [[${candidate.phone}]]</h5>
+    <h5>Email: [[${candidate.email}]]</h5>
+</div>
+</body>
+</html>

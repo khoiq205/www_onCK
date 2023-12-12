@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>report 1</h1>
+<form th:action="@{/report1}" method="get">
+    <label for="dropdown">Select an options:</label>
+    <select name="dropdown" id="dropdown">
+        <option th:each="role: ${optionsRole}" th:value="${role}" th:text="${role}"></option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Phone</td>
+        <td>Email</td>
+    </tr>
+    </thead>
+    <tr th:each="candidate:${candidates}">
+        <td th:text="${candidate.id}"></td>
+    </tr>
+</table>
+</body>
+</html>

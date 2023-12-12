@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Candidate Page</h3>
+<a th:href="@{candidate/show_add}">Thêm ứng viên</a>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Phone</td>
+        <td>Email</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="candidate:${candidates}">
+        <td th:text="${candidate.id}"></td>
+        <td th:text="${candidate.fullName}"></td>
+        <td th:text="${candidate.phone}"></td>
+        <td th:text="${candidate.email}"></td>
+        <td><a th:href="@{/candidate/candidate_detail/{id}(id=${candidate.id})}">View</a></td>
+        <td><a th:href="@{/candidate/show_update/{id}(id=${candidate.id})}">Update</a></td>
+        <td><a th:href="@{/candidate/delete/{id}(id=${candidate.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
